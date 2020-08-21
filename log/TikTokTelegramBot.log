@@ -1,0 +1,528 @@
+[2020-08-21 10:26:13,384] [3127] [INFO] [_internal._log] [_internal.py:113]  * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)
+[2020-08-21 10:26:13,385] [3127] [INFO] [_internal._log] [_internal.py:113]  * Restarting with stat
+[2020-08-21 10:26:13,820] [3128] [WARNING] [_internal._log] [_internal.py:113]  * Debugger is active!
+[2020-08-21 10:26:13,834] [3128] [INFO] [_internal._log] [_internal.py:113]  * Debugger PIN: 207-443-549
+[2020-08-21 10:27:09,106] [3160] [ERROR] [util.run] [util.py:68] ConnectTimeout occurred, args=(MaxRetryError("HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x10b3465c0>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))"),)
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 381, in _make_request
+    self._validate_conn(conn)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 978, in _validate_conn
+    conn.connect()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 309, in connect
+    conn = self._new_conn()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 167, in _new_conn
+    % (self.host, self.timeout),
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x10b3465c0>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 727, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x10b3465c0>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/util.py", line 62, in run
+    task(*args, **kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 285, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1), timeout=timeout)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 255, in get_updates
+    json_updates = apihelper.get_updates(self.token, offset, limit, timeout, allowed_updates)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/apihelper.py", line 206, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/apihelper.py", line 67, in _make_request
+    timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x10b3465c0>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+
+[2020-08-21 10:27:09,106] [3160] [ERROR] [main.<module>] [main.py:11] ops,主程序运行异常了，HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x10b3465c0>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 381, in _make_request
+    self._validate_conn(conn)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 978, in _validate_conn
+    conn.connect()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 309, in connect
+    conn = self._new_conn()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 167, in _new_conn
+    % (self.host, self.timeout),
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x10b3465c0>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 727, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x10b3465c0>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/main.py", line 9, in <module>
+    tgbot.run_bot()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/apps/bot/tgbot.py", line 59, in run_bot
+    bot.polling(none_stop=True, timeout=600)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 427, in polling
+    self.__threaded_polling(none_stop, interval, timeout)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 450, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/util.py", line 81, in raise_exceptions
+    six.reraise(self.exc_info[0], self.exc_info[1], self.exc_info[2])
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/six.py", line 703, in reraise
+    raise value
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/util.py", line 62, in run
+    task(*args, **kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 285, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1), timeout=timeout)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 255, in get_updates
+    json_updates = apihelper.get_updates(self.token, offset, limit, timeout, allowed_updates)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/apihelper.py", line 206, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/apihelper.py", line 67, in _make_request
+    timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x10b3465c0>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+[2020-08-21 10:28:51,329] [3202] [INFO] [_internal._log] [_internal.py:113]  * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)
+[2020-08-21 10:28:51,329] [3202] [INFO] [_internal._log] [_internal.py:113]  * Restarting with stat
+[2020-08-21 10:28:51,767] [3203] [WARNING] [_internal._log] [_internal.py:113]  * Debugger is active!
+[2020-08-21 10:28:51,772] [3203] [INFO] [_internal._log] [_internal.py:113]  * Debugger PIN: 207-443-549
+[2020-08-21 10:29:08,351] [3203] [INFO] [tiktok.getVideoID] [tiktok.py:33] 获取到视频ID:6862612303968308488
+[2020-08-21 10:29:08,791] [3203] [INFO] [tiktok.getVideoInfo] [tiktok.py:52] 获取视频连接成功，视频ID:6862612303968308488，标题:每次听到这首歌里的口哨 就会想起太阳的后裔里的场景 #音乐分享 #kwill #神曲 #韩剧ost，视频链接:https://aweme.snssdk.com/aweme/v1/play/?video_id=v0200f1a0000bsueat23m6pm8rpjcfng&ratio=720p&line=0，MP3链接:http://p9-dy.byteimg.com/obj/ies-music/6862612303246887687.mp3，图片链接:https://p9-dy.byteimg.com/tos-cn-p-0015/d05f1dabc4c04a65b4de5e4d72881ee3_1597826446~tplv-dy-360p.jpeg?from=2563711402
+[2020-08-21 10:29:08,792] [3203] [INFO] [_internal._log] [_internal.py:113] 127.0.0.1 - - [21/Aug/2020 10:29:08] "[37mGET /api/v1/dy?url=https://v.douyin.com/JrAbnd7/ HTTP/1.1[0m" 200 -
+[2020-08-21 10:30:20,030] [3282] [INFO] [_internal._log] [_internal.py:113]  * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)
+[2020-08-21 10:30:28,287] [3282] [INFO] [tiktok.getVideoID] [tiktok.py:33] 获取到视频ID:6862612303968308488
+[2020-08-21 10:30:29,347] [3282] [INFO] [tiktok.getVideoInfo] [tiktok.py:52] 获取视频连接成功，视频ID:6862612303968308488，标题:每次听到这首歌里的口哨 就会想起太阳的后裔里的场景 #音乐分享 #kwill #神曲 #韩剧ost，视频链接:https://aweme.snssdk.com/aweme/v1/play/?video_id=v0200f1a0000bsueat23m6pm8rpjcfng&ratio=720p&line=0，MP3链接:http://p9-dy.byteimg.com/obj/ies-music/6862612303246887687.mp3，图片链接:https://p9-dy.byteimg.com/tos-cn-p-0015/d05f1dabc4c04a65b4de5e4d72881ee3_1597826446~tplv-dy-360p.jpeg?from=2563711402
+[2020-08-21 10:30:29,348] [3282] [INFO] [_internal._log] [_internal.py:113] 127.0.0.1 - - [21/Aug/2020 10:30:29] "[37mGET /api/v1/dy?url=https://v.douyin.com/JrAbnd7/ HTTP/1.1[0m" 200 -
+[2020-08-21 10:35:36,010] [3282] [ERROR] [util.run] [util.py:68] ConnectTimeout occurred, args=(MaxRetryError("HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x106257ba8>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))"),)
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 381, in _make_request
+    self._validate_conn(conn)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 978, in _validate_conn
+    conn.connect()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 309, in connect
+    conn = self._new_conn()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 167, in _new_conn
+    % (self.host, self.timeout),
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x106257ba8>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 727, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x106257ba8>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/util.py", line 62, in run
+    task(*args, **kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 285, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1), timeout=timeout)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 255, in get_updates
+    json_updates = apihelper.get_updates(self.token, offset, limit, timeout, allowed_updates)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/apihelper.py", line 206, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/apihelper.py", line 67, in _make_request
+    timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x106257ba8>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+
+[2020-08-21 10:35:36,011] [3282] [ERROR] [main.<module>] [main.py:13] ops,主程序运行异常了，HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x106257ba8>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 381, in _make_request
+    self._validate_conn(conn)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 978, in _validate_conn
+    conn.connect()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 309, in connect
+    conn = self._new_conn()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 167, in _new_conn
+    % (self.host, self.timeout),
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x106257ba8>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 727, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x106257ba8>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/main.py", line 11, in <module>
+    tgbot.run_bot()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/apps/bot/tgbot.py", line 59, in run_bot
+    bot.polling(none_stop=True, timeout=600)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 427, in polling
+    self.__threaded_polling(none_stop, interval, timeout)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 450, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/util.py", line 81, in raise_exceptions
+    six.reraise(self.exc_info[0], self.exc_info[1], self.exc_info[2])
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/six.py", line 703, in reraise
+    raise value
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/util.py", line 62, in run
+    task(*args, **kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 285, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1), timeout=timeout)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 255, in get_updates
+    json_updates = apihelper.get_updates(self.token, offset, limit, timeout, allowed_updates)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/apihelper.py", line 206, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/apihelper.py", line 67, in _make_request
+    timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x106257ba8>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+[2020-08-21 10:37:32,906] [3421] [INFO] [_internal._log] [_internal.py:113]  * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)
+[2020-08-21 10:40:10,073] [3421] [ERROR] [util.run] [util.py:68] ConnectTimeout occurred, args=(MaxRetryError("HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x110dade80>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))"),)
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 381, in _make_request
+    self._validate_conn(conn)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 978, in _validate_conn
+    conn.connect()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 309, in connect
+    conn = self._new_conn()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 167, in _new_conn
+    % (self.host, self.timeout),
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x110dade80>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 727, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x110dade80>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/util.py", line 62, in run
+    task(*args, **kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 285, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1), timeout=timeout)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 255, in get_updates
+    json_updates = apihelper.get_updates(self.token, offset, limit, timeout, allowed_updates)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/apihelper.py", line 206, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/apihelper.py", line 67, in _make_request
+    timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x110dade80>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+
+[2020-08-21 10:40:10,075] [3421] [ERROR] [main.<module>] [main.py:13] ops,主程序运行异常了，HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x110dade80>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 381, in _make_request
+    self._validate_conn(conn)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 978, in _validate_conn
+    conn.connect()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 309, in connect
+    conn = self._new_conn()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 167, in _new_conn
+    % (self.host, self.timeout),
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x110dade80>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 727, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x110dade80>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/main.py", line 11, in <module>
+    tgbot.run_bot()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/apps/bot/tgbot.py", line 59, in run_bot
+    bot.polling(none_stop=True, timeout=600)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 427, in polling
+    self.__threaded_polling(none_stop, interval, timeout)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 450, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/util.py", line 81, in raise_exceptions
+    six.reraise(self.exc_info[0], self.exc_info[1], self.exc_info[2])
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/six.py", line 703, in reraise
+    raise value
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/util.py", line 62, in run
+    task(*args, **kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 285, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1), timeout=timeout)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 255, in get_updates
+    json_updates = apihelper.get_updates(self.token, offset, limit, timeout, allowed_updates)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/apihelper.py", line 206, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/apihelper.py", line 67, in _make_request
+    timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x110dade80>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+[2020-08-21 10:47:08,561] [4214] [INFO] [_internal._log] [_internal.py:113]  * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)
+[2020-08-21 10:47:08,563] [4214] [INFO] [_internal._log] [_internal.py:113]  * Restarting with stat
+[2020-08-21 10:47:09,053] [4215] [WARNING] [_internal._log] [_internal.py:113]  * Debugger is active!
+[2020-08-21 10:47:09,071] [4215] [INFO] [_internal._log] [_internal.py:113]  * Debugger PIN: 207-443-549
+[2020-08-21 10:47:21,809] [4215] [INFO] [tiktok.getVideoID] [tiktok.py:33] 获取到视频ID:6862612303968308488
+[2020-08-21 10:47:22,307] [4215] [INFO] [tiktok.getVideoInfo] [tiktok.py:52] 获取视频连接成功，视频ID:6862612303968308488，标题:每次听到这首歌里的口哨 就会想起太阳的后裔里的场景 #音乐分享 #kwill #神曲 #韩剧ost，视频链接:https://aweme.snssdk.com/aweme/v1/play/?video_id=v0200f1a0000bsueat23m6pm8rpjcfng&ratio=720p&line=0，MP3链接:http://p9-dy.byteimg.com/obj/ies-music/6862612303246887687.mp3，图片链接:https://p26-dy.byteimg.com/tos-cn-p-0015/d05f1dabc4c04a65b4de5e4d72881ee3_1597826446~tplv-dy-360p.jpeg?from=2563711402
+[2020-08-21 10:47:22,308] [4215] [INFO] [_internal._log] [_internal.py:113] 127.0.0.1 - - [21/Aug/2020 10:47:22] "[37mGET /api/v1/dy?url=https://v.douyin.com/JrAbnd7/ HTTP/1.1[0m" 200 -
+[2020-08-21 10:50:08,358] [4286] [INFO] [_internal._log] [_internal.py:113]  * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)
+[2020-08-21 10:57:35,440] [4286] [ERROR] [util.run] [util.py:68] ConnectTimeout occurred, args=(MaxRetryError("HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x1044e7dd8>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))"),)
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 381, in _make_request
+    self._validate_conn(conn)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 978, in _validate_conn
+    conn.connect()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 309, in connect
+    conn = self._new_conn()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 167, in _new_conn
+    % (self.host, self.timeout),
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x1044e7dd8>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 727, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x1044e7dd8>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/util.py", line 62, in run
+    task(*args, **kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 285, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1), timeout=timeout)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 255, in get_updates
+    json_updates = apihelper.get_updates(self.token, offset, limit, timeout, allowed_updates)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/apihelper.py", line 206, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/apihelper.py", line 67, in _make_request
+    timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x1044e7dd8>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+
+[2020-08-21 10:57:35,442] [4286] [ERROR] [main.<module>] [main.py:13] ops,主程序运行异常了，HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x1044e7dd8>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 381, in _make_request
+    self._validate_conn(conn)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 978, in _validate_conn
+    conn.connect()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 309, in connect
+    conn = self._new_conn()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connection.py", line 167, in _new_conn
+    % (self.host, self.timeout),
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x1044e7dd8>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 727, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/urllib3/util/retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x1044e7dd8>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rizhiyi/github/TikTokTelegramBot/main.py", line 11, in <module>
+    tgbot.run_bot()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/apps/bot/tgbot.py", line 59, in run_bot
+    bot.polling(none_stop=True, timeout=600)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 427, in polling
+    self.__threaded_polling(none_stop, interval, timeout)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 450, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/util.py", line 81, in raise_exceptions
+    six.reraise(self.exc_info[0], self.exc_info[1], self.exc_info[2])
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/six.py", line 703, in reraise
+    raise value
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/util.py", line 62, in run
+    task(*args, **kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 285, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1), timeout=timeout)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/__init__.py", line 255, in get_updates
+    json_updates = apihelper.get_updates(self.token, offset, limit, timeout, allowed_updates)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/apihelper.py", line 206, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/telebot/apihelper.py", line 67, in _make_request
+    timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/rizhiyi/github/TikTokTelegramBot/venv/lib/python3.7/site-packages/requests/adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1392716105:AAGBs0mFdo1b2XzXUnKvsRqOwMqEhbpQo9Q/getUpdates?offset=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x1044e7dd8>, 'Connection to api.telegram.org timed out. (connect timeout=3.5)'))
+[2020-08-21 10:58:16,077] [4430] [INFO] [_internal._log] [_internal.py:113]  * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)
+[2020-08-21 10:58:16,079] [4430] [INFO] [_internal._log] [_internal.py:113]  * Restarting with stat
+[2020-08-21 10:58:16,658] [4432] [WARNING] [_internal._log] [_internal.py:113]  * Debugger is active!
+[2020-08-21 10:58:16,665] [4432] [INFO] [_internal._log] [_internal.py:113]  * Debugger PIN: 207-443-549
